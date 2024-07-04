@@ -3,7 +3,7 @@ import pandas as pd
 import itertools
 
 ### Read fixed paraphrases (i.e. paraphrases without additional text like "Altered sentence:")
-first_anno = pd.read_csv("annotation_sentence_fixed.csv",sep=";")
+first_anno = pd.read_csv("paraphrases_cleaned.csv",sep=";")
 
 prompt_map = {2:"Zero-Shot",  1:"One-Shot",  0:"Few-Shot", 4:"CoT", 3:"Fine Tuned"}
 paraphrases = {}
@@ -147,7 +147,8 @@ for annotation_raw in annotation_json:
 
 df = pd.DataFrame(annotation_list)
 df["golden_example"] = df["index"]>100000
-df.to_csv("first_phase_out.csv",sep=";")
+df.to_csv("apty_base.csv",sep=";", index =False)
+df.to_parquet("apty_base.parquet")
 
 #### Second Phase
 annotation_json = {}
@@ -231,5 +232,8 @@ for id in data:
             one_pair["rejected"] = para_a_info
         output.append(one_pair)
 
-with open("second_phase_out.json","w") as f:
+with open("apty_ranked.json","w") as f:
     json.dump(output,f)
+
+apty_ranked = pd.DataFrame(output)
+apty_ranked.to_parquet("apty_ranked.parquet")    
