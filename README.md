@@ -7,7 +7,7 @@ The code to generate the paraphrase candidates can be found at https://github.co
 
 
 # Citation
-'''bib
+```bib
 @misc{meier2024humanunderstandingparaphrasetypes,
       title={Towards Human Understanding of Paraphrase Types in ChatGPT}, 
       author={Dominik Meier and Jan Philip Wahle and Terry Ruas and Bela Gipp},
@@ -17,4 +17,4 @@ The code to generate the paraphrase candidates can be found at https://github.co
       primaryClass={cs.CL},
       url={https://arxiv.org/abs/2407.02302}, 
 }
-'''
+```
