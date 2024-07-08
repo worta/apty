@@ -7,7 +7,37 @@ Dataset from the paper "Towards Human Understanding of Paraphrase Types in ChatG
 The code to generate the paraphrase candidates can be found at https://github.com/worta/generate_apt_paraphrases. The generation uses ChatGPT. The dataset is also available at https://huggingface.co/datasets/worta/apty.
 
 
+# Dataset
+APTY<sub>base</sub>
 
+| Column Name            | Data Type        | Additional Info                    |
+|------------------------|------------------|------------------------------------|
+| annotator              | int64            |                                    |
+| apt                    | string           |  Atomic Paraphrase Type            |
+| index                  | int64            |                                    |
+| kind                   | int64            |                                    |
+| paraphrase-text        | string           |                                   |
+| original               | string           |                          |
+| paraphrase_fixed       | string           | Paraphrase-text with generation artificats removed (like "altered text:")      |
+| paraphrase             | bool             | Semantically equivalent?      |
+| applied-correctly      | bool             |                          |
+| failure_identical      | bool             |                           |
+| failure_otherchange    | bool             |                          |
+| failure_nonsense       | bool             |                          |
+| failure_other          | bool             |                           |
+| correct_format         | bool             |                          |
+| hard                   | bool             |                          |
+| add_morph              | bool             |                          |
+| add_struct             | bool             |                          |
+| add_semantic           | bool             |                          |
+| add_others             | bool             |                          |
+| mistaken_morph         | bool             |                          |
+| mistaken_struct        | bool             |                           |
+| mistaken_semantic      | bool             |                           |
+| start                  | float64          |  Start position of change (in paraphrase-text)   |
+| end                    | float64          |  End position of change (in paraphrase-text)    |
+| marked_text            | string           |  Text of change                                 |
+| golden_example         | bool             |  Is golden example (i.e. paraphrase was generated manually)                                  |
 
 # Citation
 ```bib
