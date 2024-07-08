@@ -1,3 +1,6 @@
+[![arXiv](https://img.shields.io/badge/arXiv-2310.14863-b31b1b.svg)](https://arxiv.org/abs/2407.02302)
+[![HuggingFace Datasets](https://img.shields.io/badge/🤗-Datasets-ffce1c.svg)](https://huggingface.co/datasets/worta/apty)
+
 # APTY
 Dataset from the paper "Towards Human Understanding of Paraphrase Types in ChatGPT" (https://arxiv.org/abs/2407.02302). It consists of two parts: The first part (APTY<sub>base</sub>) contains annotated paraphrases with specific atomic paraphrase types based on the ETPC dataset. The second part (APTY<sub>ranked</sub>) consists of human preferences ranking paraphrases with specific atomic paraphrase types.
 
