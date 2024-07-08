@@ -39,6 +39,20 @@ APTY<sub>base</sub>
 | marked_text            | string           |  Text of change                                 |
 | golden_example         | bool             |  Is golden example (i.e. paraphrase was generated manually)                                  |
 
+APTY<sub>ranked</sub>
+| Field Name             | Data Type        | Additional Info                    |
+|------------------------|------------------|------------------------------------|
+| meta.id                | int              |                                    |
+| meta.annotators        | list of ints     |                                    |
+| meta.APT               | string           |                                    |
+| original               | string           |                                    |
+| chosen.id              | int              |  ID of paraphrase, can join with APTY_base  |
+| chosen.text            | string           |                                    |
+| chosen.ranks           | list of ints     |                                    |
+| rejected.id            | int              |  ID of paraphrase, can join with APTY_base                                  |
+| rejected.text          | string           |                                    |
+| rejected.ranks         | list of ints     |                                    |
+
 # Citation
 ```bib
 @misc{meier2024humanunderstandingparaphrasetypes,
