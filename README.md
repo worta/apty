@@ -8,7 +8,7 @@ The code to generate the paraphrase candidates can be found at https://github.co
 
 
 # Dataset
-APTY<sub>base</sub>
+## APTY<sub>base</sub>
 
 | Column Name            | Data Type        | Additional Info                    |
 |------------------------|------------------|------------------------------------|
@@ -39,7 +39,7 @@ APTY<sub>base</sub>
 | marked_text            | string           |  Text of change                                 |
 | golden_example         | bool             |  Is golden example (i.e. paraphrase was generated manually)                                  |
 
-APTY<sub>ranked</sub>
+## APTY<sub>ranked</sub>
 | Field Name             | Data Type        | Additional Info                    |
 |------------------------|------------------|------------------------------------|
 | meta.id                | int              |                                    |
