@@ -14,7 +14,7 @@ The code to generate the paraphrase candidates can be found at https://github.co
 |------------------------|------------------|------------------------------------|
 | annotator              | int64            |                                    |
 | apt                    | string           |  Atomic Paraphrase Type            |
-| index                  | int64            |                                    |
+| index                  | int64            | Can join with APTY-ranked paraphrases           |
 | kind                   | int64            |                                    |
 | paraphrase-text        | string           |                                   |
 | original               | string           |                          |
