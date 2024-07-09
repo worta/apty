@@ -18,7 +18,7 @@ The code to generate the paraphrase candidates can be found at https://github.co
 | kind                   | int64            |                                    |
 | paraphrase-text        | string           |                                   |
 | original               | string           |                          |
-| paraphrase_fixed       | string           | Paraphrase-text with generation artificats removed (like "altered text:")      |
+| paraphrase_fixed       | string           | Paraphrase-text with generation artifacts removed (like "altered text:")      |
 | paraphrase             | bool             | Semantically equivalent?      |
 | applied-correctly      | bool             |                          |
 | failure_identical      | bool             |                           |
@@ -34,8 +34,8 @@ The code to generate the paraphrase candidates can be found at https://github.co
 | mistaken_morph         | bool             |                          |
 | mistaken_struct        | bool             |                           |
 | mistaken_semantic      | bool             |                           |
-| start                  | float64          |  Start position of change (in paraphrase-text)   |
-| end                    | float64          |  End position of change (in paraphrase-text)    |
+| start                  | int          |  Start position of change (in paraphrase-text)   |
+| end                    | int         |  End position of change (in paraphrase-text)    |
 | marked_text            | string           |  Text of change                                 |
 | golden_example         | bool             |  Is golden example (i.e. paraphrase was generated manually)                                  |
 
