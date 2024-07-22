@@ -12,28 +12,29 @@ The code to generate the paraphrase candidates can be found at https://github.co
 
 | Column Name            | Data Type        | Additional Info                    |
 |------------------------|------------------|------------------------------------|
-| annotator              | int64            |                                    |
+| annotator              | int64            | Id of annotator                    |
 | apt                    | string           |  Atomic Paraphrase Type            |
 | index                  | int64            | Can join with APTY-ranked paraphrases           |
-| kind                   | int64            |                                    |
-| paraphrase-text        | string           |                                   |
-| original               | string           |                          |
+| kind                   | int64            | Kind of generation                 |
+| paraphrase-text        | string           | Text of paraphrase candidate                 |
+| original               | string           | Base sentence                         |
 | paraphrase_fixed       | string           | Paraphrase-text with generation artifacts removed (like "altered text:")      |
 | paraphrase             | bool             | Semantically equivalent?      |
-| applied-correctly      | bool             |                          |
-| failure_identical      | bool             |                           |
-| failure_otherchange    | bool             |                          |
-| failure_nonsense       | bool             |                          |
-| failure_other          | bool             |                           |
-| correct_format         | bool             |                          |
-| hard                   | bool             |                          |
-| add_morph              | bool             |                          |
-| add_struct             | bool             |                          |
-| add_semantic           | bool             |                          |
-| add_others             | bool             |                          |
-| mistaken_morph         | bool             |                          |
-| mistaken_struct        | bool             |                           |
-| mistaken_semantic      | bool             |                           |
+| applied-correctly      | bool             | Is the APT applied correctly?                         |
+| failure_identical      | bool             | Failure reason: Identical sentences            |
+| failure_otherchange    | bool             | Failure reason: Other APT applied                         |
+| failure_nonsense       | bool             | Failure reason: Paraphrase is nonsense                         |
+| failure_other          | bool             | Failure reason: Other reasons                          |
+| correct_format         | bool             | Does the paraphrase contain undesired artifacts, see paraphrase_fixed                         |
+| hard                   | bool             | Does the annotator judge the application of the APT as hard        |
+| add_morph              | bool             | Additional change besides desired: Morph.                         |
+| add_struct             | bool             | Additional change besides desired: Struct.                           |
+| add_semantic           | bool             | Additional change besides desired: Semantic                         |
+| add_others             | bool             | Additional change besides desired: Other                          |
+| mistaken_morph         | bool             | Failure other APT applied: Morph.                         |
+| mistaken_struct        | bool             | Failure other APT applied: Struct.                          |
+| mistaken_semantic      | bool             | Failure other APT applied: Semantic                           |
+| mistaken_other      | bool             | Failure other APT applied: Other                           |
 | start                  | int          |  Start position of change (in paraphrase-text)   |
 | end                    | int         |  End position of change (in paraphrase-text)    |
 | marked_text            | string           |  Text of change                                 |
@@ -42,16 +43,16 @@ The code to generate the paraphrase candidates can be found at https://github.co
 ## APTY<sub>ranked</sub>
 | Field Name             | Data Type        | Additional Info                    |
 |------------------------|------------------|------------------------------------|
-| meta.id                | int              |                                    |
-| meta.annotators        | list of ints     |                                    |
-| meta.APT               | string           |                                    |
-| original               | string           |                                    |
+| meta.id                | int              | Id                                   |
+| meta.annotators        | list of ints     | List of annotators rating this sentence      |
+| meta.APT               | string           | Desired APT                                   |
+| original               | string           | Original sentence                                   |
 | chosen.id              | int              |  ID of paraphrase, can join with APTY_base  |
-| chosen.text            | string           |                                    |
-| chosen.ranks           | list of ints     |                                    |
+| chosen.text            | string           |  Text of preferred paraprhase                                  |
+| chosen.ranks           | list of ints     |  Ranks given by annotators, in order                                  |
 | rejected.id            | int              |  ID of paraphrase, can join with APTY_base                                  |
-| rejected.text          | string           |                                    |
-| rejected.ranks         | list of ints     |                                    |
+| rejected.text          | string           |  Text of non-preferred paraphrase                                  |
+| rejected.ranks         | list of ints     |  Ranks given by annotators in order                                  |
 
 # Citation
 ```bib
